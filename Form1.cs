@@ -24,19 +24,26 @@ namespace WindowsFormsApp11
 
         private void button1_Click(object sender, EventArgs e)
         {
-            KIAForm form = new KIAForm();
+            CategoryForm form = new CategoryForm("Бизнес-класс");
             form.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PaganiForm form = new PaganiForm();
+            CategoryForm form = new CategoryForm("Суперкары");
             form.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonRenault_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Здесь пока нет машины");
+            CategoryForm form = new CategoryForm("Бюджетные авто");
+            form.Show();
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HelpForm form = new HelpForm();
+            form.Show();
         }
     }
 }
