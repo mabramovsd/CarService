@@ -16,5 +16,10 @@ namespace WindowsFormsApp11
         {
             InitializeComponent();
         }
+
+        private void HelpForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

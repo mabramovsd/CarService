@@ -52,6 +52,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "HelpForm";
             this.Text = "Справка";
+            this.Load += new System.EventHandler(this.HelpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

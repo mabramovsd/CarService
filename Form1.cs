@@ -42,7 +42,7 @@ namespace WindowsFormsApp11
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HelpForm form = new HelpForm();
+            FIlterForm form = new FIlterForm();
             form.Show();
         }
     }

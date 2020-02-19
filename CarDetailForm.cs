@@ -16,22 +16,15 @@ namespace WindowsFormsApp11
         {
             InitializeComponent();
             
-            pictureBox1.Load("../../Pictures/" + car +".jpg");
-            Text = "Автомобиль " + car;
             textBox1.Text = car;
+            Text = "Автомобиль " + car;
 
-            if (car == "Pagani Zonda")
+            try
             {
-                textBox1.Text += 
-                    Environment.NewLine + "Максимальная скорость 330 км / ч" +
-                    Environment.NewLine + "Мощность 700 л.с.";
+                pictureBox1.Load("../../Pictures/" + car + ".jpg");
+                textBox1.Text = System.IO.File.ReadAllText("../../Pictures/" + car + ".txt");
             }
-            if (car == "KIA Optima")
-            {
-                textBox1.Text +=
-                    Environment.NewLine + "Максимальная скорость 220 км / ч" +
-                    Environment.NewLine + "Мощность 200 л.с.";
-            }
+            catch (Exception) { }
         }
 
         private void CarDetailForm_Load(object sender, EventArgs e)

@@ -12,48 +12,67 @@ namespace WindowsFormsApp11
 {
     public partial class CategoryForm : Form
     {
+        Button[] btn = new Button[10];
+
         public CategoryForm(string category)
         {
             InitializeComponent();
 
-            button2.Visible = true;
-            button6.Visible = true;
+            btn[0] = button1;
+            btn[1] = button2;
+            btn[2] = button3;
+
+            for (int i = 0; i < 3; i++)
+            {
+                btn[i].Visible = true;
+            }
 
             Text = "Автомобили класса " + category;
             if (category == "Суперкары")
             {
+                button1.Text = "McLaren Senna";
                 button2.Text = "McLaren Senna";
-                button6.Text = "Pagani Zonda";
+                button3.Text = "Pagani Zonda";
             }
             else if (category == "Бюджетные авто")
             {
-                button2.Text = "Renault Logan";
-                button6.Visible = false;
+                button1.Text = "Renault Logan";
+                for (int i = 1; i < 3; i++)
+                {
+                    btn[i].Visible = true;
+                }
             }
             else if (category == "Бизнес-класс")
             {
+                button1.Text = "Toyota Camry";
                 button2.Text = "KIA Optima";
-                button6.Text = "Toyota Camry";
+                button3.Visible = false;
             }
             else
             {
-                button2.Visible = false;
-                button6.Visible = false;
+                for (int i = 0; i < 3; i++)
+                {
+                    btn[i].Visible = false;
+                }
             }
 
+            if (button1.Text != "")
+            {
+                pictureBox1.Load("../../Pictures/" + button1.Text + ".jpg");
+            }
             if (button2.Text != "")
             {
                 pictureBox2.Load("../../Pictures/" + button2.Text + ".jpg");
             }
-            if (button6.Text != "")
+            if (button3.Text != "")
             {
-                pictureBox4.Load("../../Pictures/" + button6.Text + ".jpg");
+                pictureBox3.Load("../../Pictures/" + button3.Text + ".jpg");
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            CarDetailForm form = new CarDetailForm(button6.Text);
+            CarDetailForm form = new CarDetailForm(button3.Text);
             form.Show();
         }
 
